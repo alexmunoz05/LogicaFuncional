@@ -9,16 +9,6 @@ lenguajePadre(miranda, haskell).
 lenguajePadre(haskell, mondrian).
 lenguajePadre(haskell, haskellplus).
 lenguajePadre(haskell, ohaskell).
-
-lenguajeHermano(X,Y):- lenguajePadre(Z,X), lenguajePadre(Z,Y).
-
-lenguajeAbuelo(X,Y):- lenguajePadre(Z,Y), lenguajePadre(X,Z).
-
-%Preguntas:
-%¿Quién es el padre de Haskell? R= KRC, ML y HOPE
-%¿Es hijo KRC de C++? R= False
-%¿Es Mondrian lenguaje hermano de Haskell++? R= True
-
 lenguajePadre(joss, cal).
 lenguajePadre(joss, isis).
 lenguajePadre(joss, pili).
@@ -31,7 +21,6 @@ lenguajePadre(focal, coke).
 lenguajePadre(telcomp, mumps).
 lenguajePadre(telcomp, logo).
 lenguajePadre(mumps, stringcomp).
-
 lenguajePadre(lisp, emacslisp).
 lenguajePadre(lisp, logo).
 lenguajePadre(lisp, maclisp).
@@ -49,3 +38,15 @@ lenguajePadre(planner, popler).
 lenguajePadre(planner, qa4).
 lenguajePadre(microplanner, prolog).
 lenguajePadre(qa4, qlisp).
+
+lenguajeHermano(X,Y):- lenguajePadre(Z,X), lenguajePadre(Z,Y).
+
+lenguajeAbuelo(X,Y):- lenguajePadre(Z,Y), lenguajePadre(X,Z).
+
+%Preguntas:
+%¿Quién es el padre de Haskell? R= KRC, ML y HOPE
+%¿Es hijo KRC de C++? R= False
+%¿Es Mondrian lenguaje hermano de Haskell++? R= True
+
+
+
